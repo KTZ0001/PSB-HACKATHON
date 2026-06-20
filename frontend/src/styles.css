@@ -1,0 +1,390 @@
+/* Aegis demo — color system reused exactly from the pitch deck. Enterprise-calm
+   (Stripe/Linear/Palantir), not sci-fi: whitespace, restraint, color only to
+   signal risk tier. No gradients/glow/particles. */
+:root {
+  --bg: #f7fafa;
+  --ink: #0b1f26;
+  --teal: #028090;
+  --green: #02c39a; /* tier >= 70 */
+  --amber: #f4a535; /* tier 35-69 */
+  --orange: #e8743b; /* tier 15-34 */
+  --red: #c0504d; /* tier < 15 (sparing) */
+  --card: #ffffff;
+  --muted: #6b8088;
+  --hairline: #e6eded;
+  --shadow: 0 1px 3px rgba(11, 31, 38, 0.06), 0 8px 24px rgba(11, 31, 38, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============================ HOME ============================ */
+.home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+}
+.home .brand {
+  font-size: 64px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--teal);
+  margin: 0;
+}
+.home .tagline {
+  font-size: 17px;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  margin: 0 0 34px;
+}
+.launch-btn {
+  appearance: none;
+  border: none;
+  background: var(--teal);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 15px 38px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform 0.08s ease, background 0.15s ease;
+}
+.launch-btn:hover {
+  background: #02707e;
+}
+.launch-btn:active {
+  transform: translateY(1px);
+}
+
+/* ============================ MAIN ============================ */
+.main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 26px 30px;
+  gap: 18px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+.main-header {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  flex: 0 0 auto;
+}
+.main-header .logo {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--teal);
+}
+.main-header .sub {
+  font-size: 13px;
+  color: var(--muted);
+}
+.case-badge {
+  margin-left: auto;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--orange);
+  background: #fdf1e8;
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+/* 3-panel grid */
+.panels {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr 1fr;
+  gap: 18px;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+.card {
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 24px 26px;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.panel-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+/* ---- left: customer session ---- */
+.cust-name {
+  font-size: 22px;
+  font-weight: 700;
+}
+.cust-meta {
+  margin: 14px 0 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.meta-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+.meta-row .k {
+  color: var(--muted);
+}
+.meta-row .v {
+  font-weight: 600;
+}
+.risk-title {
+  margin-top: 22px;
+}
+.risk-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.risk-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+.risk-item .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--orange);
+  flex: 0 0 auto;
+}
+.risk-empty {
+  font-size: 13.5px;
+  color: var(--muted);
+}
+
+/* ---- center: trust score ---- */
+.score-panel {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.score-value {
+  font-size: 124px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+.score-tier {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+.score-cta {
+  margin-top: 30px;
+}
+.next-btn {
+  appearance: none;
+  border: 1px solid var(--teal);
+  background: #fff;
+  color: var(--teal);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 26px;
+  border-radius: 11px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.08s ease;
+}
+.next-btn:hover {
+  background: #eef7f8;
+}
+.next-btn:active {
+  transform: translateY(1px);
+}
+.next-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* action-selected block (the climax) */
+.action-block {
+  margin-top: 26px;
+  width: 100%;
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  padding: 18px 20px;
+  text-align: left;
+  background: #fffaf6;
+}
+.action-block .ab-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 8px;
+}
+.action-headline {
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  margin-bottom: 10px;
+}
+/* Distinct, weighty entrance: a brief pause (the system "deciding"), then in. */
+@keyframes actionIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.action-enter {
+  animation: actionIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.7s;
+}
+.action-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14.5px;
+  font-weight: 600;
+  padding: 5px 0;
+}
+.action-line .tick {
+  color: var(--orange);
+  font-weight: 800;
+}
+
+/* ---- right: explanation ---- */
+.explanation {
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--ink);
+}
+.expl-meta {
+  margin-top: 18px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ---- secondary case buttons ---- */
+.secondary-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex: 0 0 auto;
+}
+.secondary-row .sec-hint {
+  font-size: 12px;
+  color: var(--muted);
+  margin-right: 4px;
+}
+.sec-btn {
+  appearance: none;
+  border: 1px solid var(--hairline);
+  background: #fff;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.sec-btn:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+.back-btn {
+  appearance: none;
+  border: none;
+  background: none;
+  color: var(--teal);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 4px;
+}
+
+/* ---- device graph (mule case only) ---- */
+.graph-wrap {
+  margin-top: 18px;
+  width: 100%;
+}
+.device-node {
+  transition: fill 0.6s ease;
+}
+@keyframes nodeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.node-enter {
+  animation: nodeIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+@keyframes edgeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.edge-enter {
+  animation: edgeIn 0.55s ease both;
+}
+
+/* ---- shared fade for score-step content ---- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.fade-in {
+  animation: fadeUp 0.9s ease both;
+  animation-delay: 0.2s;
+}

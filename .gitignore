@@ -1,0 +1,38 @@
+# Data — downloaded/derived, never committed (see build prompt Data section)
+data/raw/
+data/processed/
+
+# Trained model artifacts — ignore everything EXCEPT the committed demo bundle,
+# so a fresh clone / second machine can serve the API without the 1.3 GB
+# dataset download + retrain. (22 MB; well under GitHub's 100 MB limit.)
+models_store/*
+!models_store/aegis_models.joblib
+*.pkl
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+env/
+
+# Env / secrets
+.env
+
+# Kaggle credentials (should live in ~/.kaggle, never in repo)
+kaggle.json
+access_token
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Notebooks scratch
+.ipynb_checkpoints/
+
+# Run logs
+*.log
