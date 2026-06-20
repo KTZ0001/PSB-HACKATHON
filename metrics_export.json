@@ -1,0 +1,46 @@
+{
+  "model_version": "0.1.0",
+  "trained_at": "2026-06-20T04:57:53.054013+00:00",
+  "class_order": [
+    "legitimate",
+    "account_takeover",
+    "mule_network"
+  ],
+  "anomaly_decision_min": -0.09553811827927294,
+  "anomaly_decision_max": 0.14268521362298875,
+  "metrics": {
+    "iso_anomaly_auc": 0.5445276783286925,
+    "xgb_fraud_auc": 0.8892343533216165,
+    "xgb_report": "                  precision    recall  f1-score   support\n\n      legitimate     0.9894    0.9890    0.9892    202133\naccount_takeover     0.2464    0.2464    0.2464      2719\n    mule_network     0.2594    0.3899    0.3116       159\n\n        accuracy                         0.9787    205011\n       macro avg     0.4984    0.5418    0.5157    205011\n    weighted avg     0.9790    0.9787    0.9788    205011\n",
+    "confusion_matrix": [
+      [
+        199907,
+        2049,
+        177
+      ],
+      [
+        2049,
+        670,
+        0
+      ],
+      [
+        97,
+        0,
+        62
+      ]
+    ],
+    "class_order": [
+      "legitimate",
+      "account_takeover",
+      "mule_network"
+    ],
+    "n_train": 794989,
+    "n_test": 205011,
+    "label_distribution": {
+      "legitimate": 988971,
+      "account_takeover": 9994,
+      "mule_network": 1035
+    },
+    "class_weight_power": 0.45
+  }
+}
