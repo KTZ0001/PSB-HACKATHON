@@ -3,7 +3,7 @@ import {
   buildNarrative, makeSuffix, postScore,
   buildMuleCase, buildSocialCase, fetchDeviceRisk,
 } from "./narrative.js";
-
+//model trained
 // --- trust tier helpers (thresholds match backend _trust_style) -------------
 function tierLabel(score) {
   if (score >= 70) return "Trusted";
