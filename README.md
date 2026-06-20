@@ -344,3 +344,24 @@ This runs the same narrative and scenario calls against the live backend
 and prints the results directly to the terminal — it auto-launches the API,
 drives it, and shuts it down, so no frontend/npm is required. Useful as a
 fallback or for a quick sanity check that the backend works.
+
+---
+
+## License & Copyright
+
+© 2026 Team Aegis. All Rights Reserved.
+
+This project — including its source code, architecture, documentation, and
+the "Aegis" name and concept as presented — was created for the Bank of
+Baroda Hackathon Series 2026. All rights are reserved by the authors. No
+part of this repository may be copied, reproduced, distributed, or used to
+create derivative works without the express written permission of Team
+Aegis.
+
+This project uses third-party datasets under their own respective licenses:
+- Bank Account Fraud Dataset Suite (NeurIPS 2022) — see the dataset's
+  license on Kaggle
+- Synthetic Financial Fraud Dataset — see the dataset's license on Kaggle
+
+Use of these datasets does not grant any rights to Team Aegis's own code,
+architecture, or documentation beyond what's stated above.
